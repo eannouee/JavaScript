@@ -62,3 +62,7 @@ let findFromLocalStorage = key => {
 let setToLocalStorage = (key,data) => {
     localStorage.setItem(key, JSON.stringify(data));
 }
+
+let setToSessionStorage = (key,data) => {
+    sessionStorage.setItem(key, JSON.stringify(data));
+}
