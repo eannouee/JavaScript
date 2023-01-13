@@ -97,7 +97,7 @@ let renderTime = () => {
         second = second > 9?second : '0'+second;
 
         let timeText = `${hour} : ${minute} : ${second}`;
-        nowTime.innerHTML = '';
+        nowTime.innerHTML = timeText;
 
     },1000);
 

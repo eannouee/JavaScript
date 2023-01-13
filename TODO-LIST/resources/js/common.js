@@ -54,3 +54,11 @@ let getQueryString = params =>{
 
     return tmp.join('&');
 }
+
+let findFromLocalStorage = key => {
+    return JSON.parse(localStorage.getItem(key));
+}
+
+let setToLocalStorage = (key,data) => {
+    localStorage.setItem(key, JSON.stringify(data));
+}
