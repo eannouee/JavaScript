@@ -18,6 +18,14 @@ let addUser = ev => {
     }
 }
 
+let findTodoAboutUser = todo => {
+    let userTodo = todo.filter(e => {
+        return e['user'].name == user.name
+    })[0];
+
+    return userTodo;
+}
+
 let addTodo = ev => {
     if(ev.keyCode == 13){
 
@@ -32,10 +40,7 @@ let addTodo = ev => {
             return;
         }
 
-        let userTodo = todo.filter(e => {
-            return e['user'].name == user.name
-        })[0];
-
+        let userTodo = findTodoAboutUser(todo);
 
         if(!userTodo){
             let todoItem = {'user':user, items:[inp.value]};
@@ -64,11 +69,10 @@ let renderTodo = () => {
 
     if(!todos) return;
 
-    let userTodo = todos.filter(e => {
-        return e['user'].name == user.name
-    })[0];
+    let userTodo = findTodoAboutUser(todos);
 
     todoList.innerHTML = '';
+    
     userTodo.items.forEach((e,i) => {
         console.dir(e);
         let icon = createElement('i', {prop:{className:'fa-solid fa-trash-can'}});
