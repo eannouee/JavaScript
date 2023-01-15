@@ -63,6 +63,7 @@ let addTodo = ev => {
     }
 }
 
+
 let renderTodo = () => {
 
     let todos = JSON.parse(localStorage.getItem('todo'));
@@ -107,8 +108,30 @@ let renderTime = () => {
 
 }
 
+let addTimeGreeting = () => {
+
+    let divTime = new Date();
+    let divHour = divTime.getHours();
+
+    if( divHour > 6 && divHour < 11){
+       userDiv.append(createElement('span',{text:`Good Morning! Make your day ${user.name}`}));
+    }
+    else if( 11 < divHour && divHour < 20 ){
+        userDiv.append(createElement('span',{text:`Good Afternoon! Have a nice day ${user.name}`}));
+    }
+    else{
+        userDiv.append(createElement('span',{text:`Good Night! Sweet dreams ${user.name}`}));
+
+    }
+
+
+}
+
+
+
 if(user){
-    userDiv.append(createElement('span',{text:`안녕하세요! ${user.name}`}));
+
+    addTimeGreeting();
 
     let logout = createElement('span',{prop:{className:'logout'}, text:`logout`});
     

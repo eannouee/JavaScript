@@ -44,7 +44,7 @@ body{
     width: 70%;
     height: 5vw;
     border: 0;
-    border-bottom: 3px solid white;
+    border-bottom: 2px solid white;
     border-radius: 20%;
     background-color: transparent;
     outline: none;
@@ -78,7 +78,8 @@ body{
 .logout{
     padding: 5px;
     margin-left: 10px;
-    background-color: lightslategray;
+    background-color: transparent;
+    color: lightgray;
     border-radius: 5px;
 }
 
